@@ -1,7 +1,10 @@
 \documentclass{article}
 \usepackage[normalem]{ulem}
+\usepackage{xeCJK}
 \usepackage{indentfirst}
 \usepackage{setspace}
+\usepackage{marginnote}
+
 \title{Latex Notes}
 \author{Jin}
 \date{\today}
@@ -9,6 +12,9 @@
 \setlength{\parindent}{2em} %段落首行缩进距离
 \addtolength{\parskip}{3pt} %段落间距
 \linespread{1.2} %设置行距
+\setCJKmainfont{SimSun}
+\renewcommand{\labelitemi}{-} % 改变列表符号及编号形式
+\renewcommand{\theenumi}{\alph{enumi}}
 
 \begin{document}
 \maketitle
@@ -33,6 +39,8 @@ This is subsection 1.1. \\
     \sout{strike-out}
 \end{spacing}
 
+一个标签\label{marker}
+
 
 \newpage
 \section{Section 2}
@@ -42,14 +50,87 @@ This is subsection 1.1. \\
 \begin{flushleft}
     This is paragraph.
 \end{flushleft}
+\begin{quote}
+引文两端\\都缩进。
+\end{quote}
+
+\begin{quotation}
+引文两端缩进，首\\行增加缩进。
+\end{quotation}
+
+\begin{verse}
+引文两端缩进，第二行\\起增加缩进。
+\end{verse}
+
+\verb|command| 行 间 命 令
+\begin{verbatim}
+printf("Hello   , world!");
+\end{verbatim}
+% 可以标出空格
+\begin{verbatim*} 
+printf("Hello   , world!"); 
+\end{verbatim*}
 
 \begin{center}
     This is the center of the page.
 \end{center}
 
+正文\footnote{脚注}
+
+\marginnote{正常边注}
+\reversemarginpar
+\marginnote{反向边注}
+\normalmarginpar
 
 \subparagraph{Subparagraph} 
 This is subparagraph.
+
+\begin{itemize}
+    \item C++
+    \item Java
+    \item HTML
+\end{itemize}
+
+\begin{enumerate}
+    \item C++
+    \item Java
+    \item HTML
+\end{enumerate}
+
+\begin{description}
+    \item[C++] 编 程 语 言
+    \item[Java] 编 程 语 言
+    \item[HTML] 标 记 语 言
+\end{description}
+
+\newpage
+\mbox{010 6278 5001}
+\fbox{010 6278 5001}
+
+%语法：[宽度][对齐方式]{内容}
+\makebox[100pt][c]{仪仗队}
+
+\framebox[100pt][s]{仪仗队}
+
+
+% 语法：[外部对齐][高度][内部对齐]{宽度}{内容}
+\fbox{
+ \parbox[c][36pt][t]{140pt}{
+锦瑟无端五十弦，一弦一柱思华年。庄生晓梦迷蝴蝶，望帝春心托杜鹃。
+ }
+}
+
+\hfill
+
+\fbox{
+ \begin{minipage}[c][36pt][b]{140pt}
+沧海月明珠有泪，蓝田日暖玉生烟。此情可待成追忆，只是当时已惘然。
+\end{minipage}
+}
+
+
+
+第\pageref{marker}页\ref{marker}节
 
 
 \end{document}
