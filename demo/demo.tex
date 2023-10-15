@@ -4,7 +4,16 @@
 \usepackage{indentfirst}
 \usepackage{setspace}
 \usepackage{marginnote}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{amsmath}
 
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue, % 将链接颜色更改为蓝色
+    urlcolor=blue,  % 将URL的颜色也更改为蓝色
+}
 \title{Latex Notes}
 \author{Jin}
 \date{\today}
@@ -12,7 +21,13 @@
 \setlength{\parindent}{2em} %段落首行缩进距离
 \addtolength{\parskip}{3pt} %段落间距
 \linespread{1.2} %设置行距
+
 \setCJKmainfont{SimSun}
+\setCJKmonofont{Microsoft YaHei}
+\setmainfont[Mapping=tex-text]{Times New Roman}
+\setsansfont[Mapping=tex-text]{Tahoma}
+\setmonofont{Courier New}
+
 \renewcommand{\labelitemi}{-} % 改变列表符号及编号形式
 \renewcommand{\theenumi}{\alph{enumi}}
 
@@ -39,7 +54,7 @@ This is subsection 1.1. \\
     \sout{strike-out}
 \end{spacing}
 
-一个标签\label{marker}
+
 
 
 \newpage
@@ -97,6 +112,8 @@ This is subparagraph.
     \item HTML
 \end{enumerate}
 
+一个标签\label{marker}
+
 \begin{description}
     \item[C++] 编 程 语 言
     \item[Java] 编 程 语 言
@@ -128,9 +145,111 @@ This is subparagraph.
 \end{minipage}
 }
 
-
-
 第\pageref{marker}页\ref{marker}节
 
+\begin{equation}
+    E=mc^2 \label{eq:einstein}
+\end{equation}
+
+As derived in Equation~\ref{eq:einstein}
+
+Einstein's $E=mc^2$
+\[ E=mc^2 \]
+\[ \boxed{E=mc^2} \]
+\begin{equation}
+E=mc^2
+\end{equation}
+
+\[
+x_{ij}^2\quad \sqrt{x}\quad \sqrt[3]{x} 
+\]
+
+$ \frac{1}{2} \dfrac{1}{2} $
+\[ \frac{1}{2}
+\tfrac{1}{2} \]
+
+
+\[ \pm\; \times\; \div\; \cdot\; \cap\; \cup\;
+\geq\; \leq\; \neq\; \approx\; \equiv \]
+
+
+\newpage
+$ \sum_{i=1}^n i\quad \prod_{i=1}^n\quad
+\lim_{x\to0}x^2\quad \int_a^b x^2 dx $\\
+$ \sum\limits_{i=1}^n i\quad \prod\limits_{i=1}^n\quad
+\lim\limits_{x\to0}x^2\quad \int\limits_a^b x^2 dx $
+\[ \sum_{i=1}^n i\quad \prod_{i=1}^n\quad
+\lim_{x\to0}x^2\quad \int_a^b x^2 dx \]
+\[ \sum\nolimits_{i=1}^n i\quad
+\prod\nolimits_{i=1}^n\quad
+\lim\nolimits_{x\to0}x^2\quad
+10 \int\nolimits_a^b x^2 dx \]
+
+
+\[ \int\int\quad \int\int\int\quad
+\int\int\int\int\quad \int\dots\int \]
+\[ \iint\quad \iiint\quad \iiiint\quad \idotsint \]
+
+\[ \xleftarrow{x+y+z}\quad
+\xrightarrow[x<y]{a*b*c} \]
+
+\[
+\bar{x} \quad \hat{x} \quad \vec{x} \\
+\overline{xxx} \quad \underline{xxx} \quad \overbrace{xxx} 
+\quad \underbrace{xxx} \quad \overrightarrow{xxx}
+\]
+
+\[ \Bigg(\bigg(\Big(\big((x)\big)\Big)\bigg)\Bigg)\quad
+\Bigg[\bigg[\Big[\big[[x]\big]\Big]\bigg]\Bigg]\quad
+\Bigg\{\bigg\{\Big\{\big\{\{x\}\big\}\Big\}\bigg\}\Bigg\}
+\]\[
+\Bigg\langle\bigg\langle\Big\langle\big\langle\langle x
+\rangle\big\rangle\Big\rangle\bigg\rangle\Bigg\rangle\quad
+\Bigg\lvert\bigg\lvert\Big\lvert\big\lvert\lvert x
+\rvert\big\rvert\Big\rvert\bigg\rvert\Bigg\rvert\quad
+\Bigg\lVert\bigg\lVert\Big\lVert\big\lVert\lVert x
+\rVert\big\rVert\Big\rVert\bigg\rVert\Bigg\rVert \]
+
+\[ x_1,x_2,\dots,x_n\quad 1,2,\cdots,n\quad
+\vdots\quad \ddots \]
+
+a\, a\: a\; a\quad a\qquad a\! a
+
+\[ \begin{pmatrix} a&b\\c&d \end{pmatrix} \quad
+2 \begin{bmatrix} a&b\\c&d \end{bmatrix} \quad
+\begin{Bmatrix} a&b\\c&d \end{Bmatrix} \quad
+4 \begin{vmatrix} a&b\\c&d \end{vmatrix} \quad
+\begin{Vmatrix} a&b\\c&d \end{Vmatrix} \]
+
+Marry has a little matrix $ ( \begin{smallmatrix}
+    a&b\\c&d \end{smallmatrix} ) $.
+
+\begin{multline}
+    x = a+b+c+ \\
+    d+e+f+g
+\end{multline}
+
+\[ \begin{split}
+    x = &a+b+c+ \\
+    &d+e+f+g
+\end{split} \]
+
+\begin{gather}
+    a = b+c+d \\
+    x = y+z
+\end{gather}
+
+\begin{align}
+    a &= b+c+d \\
+    x &= y+z
+\end{align}
+
+\[ 
+y=
+\begin{cases}
+    -x,\quad x\leq 0 \\
+    x,\quad x>0
+\end{cases} 
+\]
 
 \end{document}

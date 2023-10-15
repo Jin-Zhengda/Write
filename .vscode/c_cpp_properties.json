@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "compilerPath": "D:\\Scoop\\apps\\mingw\\current\\bin\\g++.exe",
+      "cppStandard": "c++23",
+      "includePath": [
+        "${{workspaceFolder}}/**"
+      ],
+      "intelliSenseMode": "windows-gcc-x64",
+      "name": "Win64"
+    }
+  ],
+  "version": 4
+}
