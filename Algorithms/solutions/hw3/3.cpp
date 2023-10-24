@@ -25,8 +25,7 @@ int main(void)
         arr1[i] = nums[i];
         arr2[i] = nums[i + 1];
     }
-    int m1[n - 1];
-    int m2[n - 1];
+    int m1[n - 1], m2[n - 1];
     m1[0] = arr1[0];
     m2[0] = arr2[0];
     m1[1] = max(arr1[0], arr1[1]);
