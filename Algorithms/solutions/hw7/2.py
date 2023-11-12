@@ -1,5 +1,4 @@
 import networkx as nx
-import numpy as np
 
 G = nx.MultiDiGraph()
 n, m = [int(x) for x in input().split(" ")]
